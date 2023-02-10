@@ -48,7 +48,7 @@ function Web() {
           <div className="image">
             <div className="img">
               {
-                user.image ? <img src={"http://localhost:3500/files/" + user.image} /> : user?.username?.charAt(0)?.toUpperCase()
+                user.image ? <img src={"https://mp-blogs-api-production.up.railway.app/" + user.image} /> : user?.username?.charAt(0)?.toUpperCase()
               }
             </div>
           </div>
@@ -63,7 +63,7 @@ function Web() {
             <div className="image">
               <div className="img">
                 {
-                  item.author_image ? <img src={"http://localhost:3500/files/" + item.author_image} /> : item?.author?.charAt(0)?.toUpperCase()
+                  item.author_image ? <img src={"https://mp-blogs-api-production.up.railway.app/files/" + item.author_image} /> : item?.author?.charAt(0)?.toUpperCase()
                 }
               </div>
             </div>
@@ -71,12 +71,12 @@ function Web() {
           </div>
           <div className="blog-img">
             {
-              item.image ? <img src={"http://localhost:3500/files/" + item.image} /> : "🎃"
+              item.image ? <img src={"https://mp-blogs-api-production.up.railway.app/files/" + item.image} /> : "🎃"
             }
           </div>
           <h3 className="title">{item.title}</h3>
           <div>
-            <audio src={"http://localhost:3500/files/" + item.audio} controls></audio>
+            <audio src={"https://mp-blogs-api-production.up.railway.app/files/" + item.audio} controls></audio>
           </div>
           {
             item.author === user.username ? <div className="actions">
