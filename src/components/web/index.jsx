@@ -48,7 +48,7 @@ function Web() {
           <div className="image">
             <div className="img">
               {
-                user.image ? <img src={"https://mp-blogs-api-production.up.railway.app/" + user.image} /> : user?.username?.charAt(0)?.toUpperCase()
+                user.image ? <img src={"https://mp-blogs-api-production.up.railway.app/files/" + user.image} /> : user?.username?.charAt(0)?.toUpperCase()
               }
             </div>
           </div>
