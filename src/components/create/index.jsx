@@ -28,7 +28,7 @@ function Create() {
         Object.keys(audio).forEach(key => {
           audioData.append(audio.item(key).name, audio.item(key))
         })
-        axios.post("http://localhost:3500/files", audioData).then((audioname => {
+        axios.post("https://mp-blogs-api-production.up.railway.app/files", audioData).then((audioname => {
           dispatch(postBlog({ title: title, author: user.username, author_image: user.image, audio: audioname.data }))
           setaudio("")
           settitle("")
@@ -40,7 +40,7 @@ function Create() {
         Object.keys(img).forEach(key => {
           imgData.append(img.item(key).name, img.item(key))
         })
-        axios.post("http://localhost:3500/files", imgData).then((imgname => {
+        axios.post("https://mp-blogs-api-production.up.railway.app/files", imgData).then((imgname => {
           dispatch(postBlog({ title: title, author: user.username, author_image: user.image, image: imgname.data }))
           setimg("")
           settitle("")
@@ -52,12 +52,12 @@ function Create() {
         Object.keys(audio).forEach(key => {
           audioData.append(audio.item(key).name, audio.item(key))
         })
-        axios.post("http://localhost:3500/files", audioData).then((audioname => {
+        axios.post("https://mp-blogs-api-production.up.railway.app/files", audioData).then((audioname => {
           const imgData = new FormData()
           Object.keys(img).forEach(key => {
             imgData.append(img.item(key).name, img.item(key))
           })
-          axios.post("http://localhost:3500/files", imgData).then((imgname => {
+          axios.post("https://mp-blogs-api-production.up.railway.app/files", imgData).then((imgname => {
             dispatch(postBlog({ title: title, author: user.username, author_image: user.image, image: imgname.data, audio: audioname.data }))
             setimg("")
             setaudio("")
