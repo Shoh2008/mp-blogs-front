@@ -19,7 +19,7 @@ function SignUp() {
         Object.keys(img).forEach(key => {
           formData.append(img.item(key).name, img.item(key))
         })
-        axios.post("http://localhost:3500/files", formData).then((res => {
+        axios.post("https://mp-blogs-api-production.up.railway.app/files", formData).then((res => {
           localStorage.setItem("mp_blog", "")
           dispatch(addUser({ ...user, image: res.data }))
           navigate("/");
