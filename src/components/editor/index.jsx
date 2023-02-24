@@ -23,7 +23,7 @@ function Editor() {
           formData.append(img.item(key).name, img.item(key))
         })
 
-        axios.post("https://mp-blogs-api-production.up.railway.app/files", formData).then((res => dispatch(editUser({ ...olduser, image: res.data }))))
+        axios.post("https://mp-blogs-api.onrender.com/files", formData).then((res => dispatch(editUser({ ...olduser, image: res.data }))))
       } else {
         dispatch(editUser(olduser))
       }
@@ -44,7 +44,7 @@ function Editor() {
           <label className="img" htmlFor="file">
             {img !== "" ?
               <img src={URL.createObjectURL(img[0])} />
-              : <img src={"https://mp-blogs-api-production.up.railway.app/files/" + olduser.image} />}
+              : <img src={"https://mp-blogs-api.onrender.com/files/" + olduser.image} />}
           </label>
           {img !== "" ? <Button onClick={() => setimg("")}>Delete</Button> : ""}
         </div>
