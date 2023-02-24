@@ -28,7 +28,7 @@ function BlogEditor() {
       Object.keys(audio).forEach(key => {
         audioData.append(audio.item(key).name, audio.item(key))
       })
-      axios.post("https://mp-blogs-api-production.up.railway.app/files", audioData).then((audioname => {
+      axios.post("https://mp-blogs-api.onrender.com/files", audioData).then((audioname => {
         dispatch(editBlog({ ...blog, title: blog.title, audio: audioname.data, author: user.username, author_image: user.image }))
         setaudio("")
         setimg("")
@@ -40,7 +40,7 @@ function BlogEditor() {
       Object.keys(img).forEach(key => {
         imgData.append(img.item(key).name, img.item(key))
       })
-      axios.post("https://mp-blogs-api-production.up.railway.app/files", imgData).then((imgname => {
+      axios.post("https://mp-blogs-api.onrender.com/files", imgData).then((imgname => {
         dispatch(editBlog({ ...blog, title: blog.title, image: imgname.data, author: user.username, author_image: user.image }))
         setaudio("")
         setimg("")
@@ -52,12 +52,12 @@ function BlogEditor() {
       Object.keys(img).forEach(key => {
         imgData.append(img.item(key).name, img.item(key))
       })
-      axios.post("https://mp-blogs-api-production.up.railway.app/files", imgData).then((imgname => {
+      axios.post("https://mp-blogs-api.onrender.com/files", imgData).then((imgname => {
         const audioData = new FormData()
         Object.keys(audio).forEach(key => {
           audioData.append(audio.item(key).name, audio.item(key))
         })
-        axios.post("https://mp-blogs-api-production.up.railway.app/files", audioData).then((audioname => {
+        axios.post("https://mp-blogs-api.onrender.com/files", audioData).then((audioname => {
           dispatch(editBlog({ ...blog, title: blog.title, image: imgname.data, audio: audioname.data, author: user.username, author_image: user.image }))
           setaudio("")
           setimg("")
@@ -82,13 +82,13 @@ function BlogEditor() {
           <label htmlFor="img" className="img">
             {
               img !== "" ? <img src={img ? URL.createObjectURL(img[0]) : ""} /> :
-                blog.image ? <img src={"https://mp-blogs-api-production.up.railway.app/files/" + blog.image} /> : blog?.title?.charAt(0)?.toUpperCase()
+                blog.image ? <img src={"https://mp-blogs-api.onrender.com/files/" + blog.image} /> : blog?.title?.charAt(0)?.toUpperCase()
             }
             <input type="file" className="img_inp" id="img" onChange={(e) => setimg((p) => e.target.files)} />
           </label>
           <div className="line">
             {audio !== "" ? <audio src={audio ? URL.createObjectURL(audio[0]) : ""} controls></audio> :
-              <audio src={"https://mp-blogs-api-production.up.railway.app/files/" + blog.audio} controls></audio>}
+              <audio src={"https://mp-blogs-api.onrender.com/files/" + blog.audio} controls></audio>}
             <Input type="file" onChange={(e) => setaudio((p) => e.target.files)} placeholder="Upload Audio" />
           </div>
           <Input placeholder="Title" onChange={(e) => edit({ title: e.target.value })} value={blog.title} />
