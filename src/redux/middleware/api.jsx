@@ -10,7 +10,7 @@ const api =
     }
     const { url, method, data, onSuccess } = action.payload;
     axios({
-      baseURL: "https://mp-blogs-api-production.up.railway.app",
+      baseURL: "https://mp-blogs-api.onrender.com",
       url,
       method,
       data,
